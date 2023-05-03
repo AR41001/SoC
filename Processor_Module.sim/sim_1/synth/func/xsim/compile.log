@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/AOA-Chip-main/Processor_Module.sim/sim_1/synth/func/xsim/Processor_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU_EU
+INFO: [VRFC 10-311] analyzing module IDP
+INFO: [VRFC 10-311] analyzing module IR
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-311] analyzing module PWM_Generator
+INFO: [VRFC 10-311] analyzing module Processor
+INFO: [VRFC 10-311] analyzing module cu
+INFO: [VRFC 10-311] analyzing module glbl
