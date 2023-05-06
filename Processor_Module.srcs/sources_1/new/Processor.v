@@ -59,15 +59,6 @@ module Processor(clk, reset, D_out,D_OUT, Address, D_in, mw_en, status);
 	PWM_Generator      u2 ( .clk(clk), .increase_duty(D_out), .decrease_duty(D_out), .PWM_OUT(D_OUT) );
 	
     //Button_Press       u3 (  .clk(clk),  .BUTTONS(D_in), .Increase_duty(D_out), .Decrease_duty(D_out));
-    
-assign status[7] = 0;
-assign status[6] = 0;
-assign status[5] = 0;
-assign status[4] = 0;
-assign status[3] = 0;
-assign status[2] = 0;
-assign status[1] = 0;
-assign status[0] = 0;
 
 
 endmodule
