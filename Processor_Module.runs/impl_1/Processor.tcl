@@ -60,22 +60,25 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param synth.incrementalSynthesisCache C:/Users/obaid/Desktop/AOA-Chip-main/AOA-Chip-main/.Xil/Vivado-16012-DESKTOP-P2FMD8V/incrSyn
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir D:/AOA-Chip-main/Processor_Module.cache/wt [current_project]
-  set_property parent.project_path D:/AOA-Chip-main/Processor_Module.xpr [current_project]
+  set_property webtalk.parent_dir C:/Users/obaid/Desktop/AOA-Chip-main/AOA-Chip-main/Processor_Module.cache/wt [current_project]
+  set_property parent.project_path C:/Users/obaid/Desktop/AOA-Chip-main/AOA-Chip-main/Processor_Module.xpr [current_project]
   set_property ip_output_repo D:/Processor_Module/Processor_Module.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet D:/AOA-Chip-main/Processor_Module.runs/synth_1/Processor.dcp
-  read_xdc D:/AOA-Chip-main/Processor_Module.srcs/constrs_1/new/Processor_XDC.xdc
+  add_files -quiet C:/Users/obaid/Desktop/AOA-Chip-main/AOA-Chip-main/Processor_Module.runs/synth_1/Processor.dcp
+  read_xdc C:/Users/obaid/Desktop/AOA-Chip-main/AOA-Chip-main/Processor_Module.srcs/constrs_1/new/Processor_XDC.xdc
   link_design -top Processor -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]

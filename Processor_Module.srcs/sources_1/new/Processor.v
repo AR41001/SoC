@@ -21,14 +21,13 @@
 
 
 module Processor(clk, reset, D_out,D_OUT, Address, D_in, mw_en, status);
-	input 	clk, reset; 
-	input 	[15:0] D_in; 
-	output 	 D_out;
-	output [15:0] D_OUT;
-	output Address;
-	output 	[7:0] status; 
-	output 	mw_en; 
-	
+ input 	 clk,reset; 
+ input        D_in; 
+ output     D_out;
+ output    D_OUT;
+ output  Address;
+ output     [7:0] status; 
+ output     mw_en; 
 	//wires: 
 	wire 	[15:0] ir_out; 
 	wire 	N, Z, C; 
@@ -61,7 +60,14 @@ module Processor(clk, reset, D_out,D_OUT, Address, D_in, mw_en, status);
 	
     //Button_Press       u3 (  .clk(clk),  .BUTTONS(D_in), .Increase_duty(D_out), .Decrease_duty(D_out));
     
-
+assign status[7] = 0;
+assign status[6] = 0;
+assign status[5] = 0;
+assign status[4] = 0;
+assign status[3] = 0;
+assign status[2] = 0;
+assign status[1] = 0;
+assign status[0] = 0;
 
 
 endmodule
